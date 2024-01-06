@@ -1,0 +1,382 @@
+
+├── bin
+│   ├── main
+│   │   ├── application-dev.yml
+│   │   ├── application-prod.yml
+│   │   ├── application.yml
+│   │   ├── com
+│   │   │   └── thedadfirm
+│   │   │       └── thedadfirmbackend
+│   │   │           ├── Application.kt
+│   │   │           ├── config
+│   │   │           │   └── ControllerAdvice.kt
+│   │   │           ├── controller
+│   │   │           │   ├── AuthController.kt
+│   │   │           │   ├── QuestionAndAnswerController.kt
+│   │   │           │   ├── TableManagementController.kt
+│   │   │           │   └── UserController.kt
+│   │   │           ├── datastore
+│   │   │           │   ├── AccountDatastore.kt
+│   │   │           │   ├── AnswerDatastore.kt
+│   │   │           │   ├── AuthRepositoryAdapter.kt
+│   │   │           │   ├── DangerousRepositoryAdapter.kt
+│   │   │           │   ├── entity
+│   │   │           │   │   ├── AccountEntity.kt
+│   │   │           │   │   ├── AnswerEntity.kt
+│   │   │           │   │   ├── SessionEntity.kt
+│   │   │           │   │   ├── UserEntity.kt
+│   │   │           │   │   └── VerificationTokenEntity.kt
+│   │   │           │   ├── jpa
+│   │   │           │   │   ├── AccountRepository.kt
+│   │   │           │   │   ├── AnswerRepository.kt
+│   │   │           │   │   ├── SessionRepository.kt
+│   │   │           │   │   ├── UserRepository.kt
+│   │   │           │   │   └── VerifyRepository.kt
+│   │   │           │   ├── SessionDatastore.kt
+│   │   │           │   ├── UserDatastore.kt
+│   │   │           │   └── VerifyDatastore.kt
+│   │   │           ├── exceptions
+│   │   │           │   ├── DataException.kt
+│   │   │           │   ├── DeserializationException.kt
+│   │   │           │   └── InvalidQuestionException.kt
+│   │   │           ├── model
+│   │   │           │   ├── Account.kt
+│   │   │           │   ├── AnswerAction.kt
+│   │   │           │   ├── Answer.kt
+│   │   │           │   ├── ErrorResponse.kt
+│   │   │           │   ├── Question.kt
+│   │   │           │   ├── Questionnaire.kt
+│   │   │           │   ├── Session.kt
+│   │   │           │   ├── User.kt
+│   │   │           │   ├── UserWithSession.kt
+│   │   │           │   └── VerificationToken.kt
+│   │   │           ├── service
+│   │   │           │   ├── AnswerService.kt
+│   │   │           │   ├── AuthService.kt
+│   │   │           │   ├── QuestionnaireService.kt
+│   │   │           │   └── UserService.kt
+│   │   │           └── util
+│   │   │               └── NullOrNotBlank.kt
+│   │   └── questionnaires
+│   │       └── qualification.yml
+│   └── test
+│       ├── application.yml
+│       ├── com
+│       │   └── thedadfirm
+│       │       └── thedadfirmbackend
+│       │           ├── ApplicationTests.kt
+│       │           ├── controller
+│       │           │   ├── AuthControllerTest.kt
+│       │           │   ├── QuestionAndAnswerControllerTest.kt
+│       │           │   └── UserControllerTest.kt
+│       │           └── model
+│       │               ├── QuestionnaireTest.kt
+│       │               └── QuestionTest.kt
+│       └── questionnaires
+│           └── test.yml
+├── build
+│   ├── classes
+│   │   └── kotlin
+│   │       └── main
+│   │           ├── com
+│   │           │   └── thedadfirm
+│   │           │       └── thedadfirmbackend
+│   │           │           ├── Application.class
+│   │           │           ├── ApplicationKt.class
+│   │           │           ├── config
+│   │           │           │   └── ControllerAdvice.class
+│   │           │           ├── controller
+│   │           │           │   ├── AuthController.class
+│   │           │           │   ├── QuestionAndAnswerController.class
+│   │           │           │   ├── TableManagementController.class
+│   │           │           │   └── UserController.class
+│   │           │           ├── datastore
+│   │           │           │   ├── AccountDatastore.class
+│   │           │           │   ├── AnswerDatastore.class
+│   │           │           │   ├── AnswerDatastoreKt.class
+│   │           │           │   ├── AuthRepositoryAdapter.class
+│   │           │           │   ├── DangerousRepositoryAdapter.class
+│   │           │           │   ├── entity
+│   │           │           │   │   ├── AccountEntity$Companion.class
+│   │           │           │   │   ├── AccountEntity.class
+│   │           │           │   │   ├── AnswerEntity$Companion.class
+│   │           │           │   │   ├── AnswerEntity.class
+│   │           │           │   │   ├── AnswerId.class
+│   │           │           │   │   ├── SessionEntity$Companion.class
+│   │           │           │   │   ├── SessionEntity.class
+│   │           │           │   │   ├── UserEntity$Companion.class
+│   │           │           │   │   ├── UserEntity.class
+│   │           │           │   │   ├── VerificationId.class
+│   │           │           │   │   ├── VerificationTokenEntity$Companion.class
+│   │           │           │   │   └── VerificationTokenEntity.class
+│   │           │           │   ├── jpa
+│   │           │           │   │   ├── AccountRepository.class
+│   │           │           │   │   ├── AnswerRepository.class
+│   │           │           │   │   ├── SessionRepository.class
+│   │           │           │   │   ├── UserRepository.class
+│   │           │           │   │   └── VerifyRepository.class
+│   │           │           │   ├── SessionDatastore.class
+│   │           │           │   ├── UserDatastore.class
+│   │           │           │   └── VerifyDatastore.class
+│   │           │           ├── exceptions
+│   │           │           │   ├── ClientErrorException.class
+│   │           │           │   ├── ConflictException.class
+│   │           │           │   ├── DataException.class
+│   │           │           │   ├── DeserializationException.class
+│   │           │           │   ├── DeserializationExceptionKt.class
+│   │           │           │   ├── InternalErrorException.class
+│   │           │           │   ├── InvalidOptionsException.class
+│   │           │           │   ├── InvalidQuestionException.class
+│   │           │           │   └── NotFoundException.class
+│   │           │           ├── model
+│   │           │           │   ├── Account.class
+│   │           │           │   ├── AnswerAction.class
+│   │           │           │   ├── Answer.class
+│   │           │           │   ├── AnswerWithQuestionnaire.class
+│   │           │           │   ├── ClientErrorResponse.class
+│   │           │           │   ├── ConflictResponse.class
+│   │           │           │   ├── CoreQuestion.class
+│   │           │           │   ├── CreateUserResponse.class
+│   │           │           │   ├── DropDownQuestion$logger$1.class
+│   │           │           │   ├── DropDownQuestion$validateWrongOptions$2.class
+│   │           │           │   ├── DropDownQuestion.class
+│   │           │           │   ├── ErrorResponse.class
+│   │           │           │   ├── MultipleChoiceQuestion$logger$1.class
+│   │           │           │   ├── MultipleChoiceQuestion$validateWrongOptions$2.class
+│   │           │           │   ├── MultipleChoiceQuestion.class
+│   │           │           │   ├── NotFoundResponse.class
+│   │           │           │   ├── Question.class
+│   │           │           │   ├── Questionnaire$clone$lambda$2$lambda$1$$inlined$readValue$1.class
+│   │           │           │   ├── Questionnaire$Companion$fromYamlFile$$inlined$readValue$1.class
+│   │           │           │   ├── Questionnaire$Companion.class
+│   │           │           │   ├── Questionnaire.class
+│   │           │           │   ├── QuestionnaireKt.class
+│   │           │           │   ├── Session.class
+│   │           │           │   ├── ShortAnswerQuestion.class
+│   │           │           │   ├── SubQuestionnaireTrigger.class
+│   │           │           │   ├── UpdateSessionRequest.class
+│   │           │           │   ├── UpdateUserRequest.class
+│   │           │           │   ├── User.class
+│   │           │           │   ├── UserProvider.class
+│   │           │           │   ├── UserWithSession.class
+│   │           │           │   ├── ValidationResponse.class
+│   │           │           │   ├── VerificationToken.class
+│   │           │           │   └── YesNoQuestion.class
+│   │           │           ├── service
+│   │           │           │   ├── AnswerService.class
+│   │           │           │   ├── AuthService.class
+│   │           │           │   ├── QuestionnaireService$addQuestionnaire$1.class
+│   │           │           │   ├── QuestionnaireService$addQuestionnaire$2$1$1.class
+│   │           │           │   ├── QuestionnaireService$addQuestionnaire$3.class
+│   │           │           │   ├── QuestionnaireService$logger$1.class
+│   │           │           │   ├── QuestionnaireService.class
+│   │           │           │   └── UserService.class
+│   │           │           └── util
+│   │           │               ├── NullOrNotBlank.class
+│   │           │               └── NullOrNotBlankValidator.class
+│   │           └── META-INF
+│   │               └── thedadfirm-backend.kotlin_module
+│   ├── kotlin
+│   │   ├── compileKotlin
+│   │   │   ├── cacheable
+│   │   │   │   ├── caches-jvm
+│   │   │   │   │   ├── inputs
+│   │   │   │   │   │   ├── source-to-output.tab
+│   │   │   │   │   │   ├── source-to-output.tab_i
+│   │   │   │   │   │   ├── source-to-output.tab_i.len
+│   │   │   │   │   │   ├── source-to-output.tab.keystream
+│   │   │   │   │   │   ├── source-to-output.tab.keystream.len
+│   │   │   │   │   │   ├── source-to-output.tab.len
+│   │   │   │   │   │   └── source-to-output.tab.values.at
+│   │   │   │   │   ├── jvm
+│   │   │   │   │   │   └── kotlin
+│   │   │   │   │   │       ├── class-attributes.tab
+│   │   │   │   │   │       ├── class-attributes.tab_i
+│   │   │   │   │   │       ├── class-attributes.tab_i.len
+│   │   │   │   │   │       ├── class-attributes.tab.keystream
+│   │   │   │   │   │       ├── class-attributes.tab.keystream.len
+│   │   │   │   │   │       ├── class-attributes.tab.len
+│   │   │   │   │   │       ├── class-attributes.tab.values.at
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab_i
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab_i.len
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab.keystream
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab.keystream.len
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab.len
+│   │   │   │   │   │       ├── class-fq-name-to-source.tab.values.at
+│   │   │   │   │   │       ├── internal-name-to-source.tab
+│   │   │   │   │   │       ├── internal-name-to-source.tab_i
+│   │   │   │   │   │       ├── internal-name-to-source.tab_i.len
+│   │   │   │   │   │       ├── internal-name-to-source.tab.keystream
+│   │   │   │   │   │       ├── internal-name-to-source.tab.keystream.len
+│   │   │   │   │   │       ├── internal-name-to-source.tab.len
+│   │   │   │   │   │       ├── internal-name-to-source.tab.values.at
+│   │   │   │   │   │       ├── package-parts.tab
+│   │   │   │   │   │       ├── package-parts.tab_i
+│   │   │   │   │   │       ├── package-parts.tab_i.len
+│   │   │   │   │   │       ├── package-parts.tab.keystream
+│   │   │   │   │   │       ├── package-parts.tab.keystream.len
+│   │   │   │   │   │       ├── package-parts.tab.len
+│   │   │   │   │   │       ├── package-parts.tab.values.at
+│   │   │   │   │   │       ├── proto.tab
+│   │   │   │   │   │       ├── proto.tab_i
+│   │   │   │   │   │       ├── proto.tab_i.len
+│   │   │   │   │   │       ├── proto.tab.keystream
+│   │   │   │   │   │       ├── proto.tab.keystream.len
+│   │   │   │   │   │       ├── proto.tab.len
+│   │   │   │   │   │       ├── proto.tab.values
+│   │   │   │   │   │       ├── proto.tab.values.at
+│   │   │   │   │   │       ├── proto.tab.values.s
+│   │   │   │   │   │       ├── source-to-classes.tab
+│   │   │   │   │   │       ├── source-to-classes.tab_i
+│   │   │   │   │   │       ├── source-to-classes.tab_i.len
+│   │   │   │   │   │       ├── source-to-classes.tab.keystream
+│   │   │   │   │   │       ├── source-to-classes.tab.keystream.len
+│   │   │   │   │   │       ├── source-to-classes.tab.len
+│   │   │   │   │   │       ├── source-to-classes.tab.values.at
+│   │   │   │   │   │       ├── subtypes.tab
+│   │   │   │   │   │       ├── subtypes.tab_i
+│   │   │   │   │   │       ├── subtypes.tab_i.len
+│   │   │   │   │   │       ├── subtypes.tab.keystream
+│   │   │   │   │   │       ├── subtypes.tab.keystream.len
+│   │   │   │   │   │       ├── subtypes.tab.len
+│   │   │   │   │   │       ├── subtypes.tab.values.at
+│   │   │   │   │   │       ├── supertypes.tab
+│   │   │   │   │   │       ├── supertypes.tab_i
+│   │   │   │   │   │       ├── supertypes.tab_i.len
+│   │   │   │   │   │       ├── supertypes.tab.keystream
+│   │   │   │   │   │       ├── supertypes.tab.keystream.len
+│   │   │   │   │   │       ├── supertypes.tab.len
+│   │   │   │   │   │       └── supertypes.tab.values.at
+│   │   │   │   │   └── lookups
+│   │   │   │   │       ├── counters.tab
+│   │   │   │   │       ├── file-to-id.tab
+│   │   │   │   │       ├── file-to-id.tab_i
+│   │   │   │   │       ├── file-to-id.tab_i.len
+│   │   │   │   │       ├── file-to-id.tab.keystream
+│   │   │   │   │       ├── file-to-id.tab.keystream.len
+│   │   │   │   │       ├── file-to-id.tab.len
+│   │   │   │   │       ├── file-to-id.tab.values.at
+│   │   │   │   │       ├── id-to-file.tab
+│   │   │   │   │       ├── id-to-file.tab_i
+│   │   │   │   │       ├── id-to-file.tab_i.len
+│   │   │   │   │       ├── id-to-file.tab.keystream
+│   │   │   │   │       ├── id-to-file.tab.keystream.len
+│   │   │   │   │       ├── id-to-file.tab.len
+│   │   │   │   │       ├── id-to-file.tab.values.at
+│   │   │   │   │       ├── lookups.tab
+│   │   │   │   │       ├── lookups.tab_i
+│   │   │   │   │       ├── lookups.tab_i.len
+│   │   │   │   │       ├── lookups.tab.keystream
+│   │   │   │   │       ├── lookups.tab.keystream.len
+│   │   │   │   │       ├── lookups.tab.len
+│   │   │   │   │       └── lookups.tab.values.at
+│   │   │   │   └── last-build.bin
+│   │   │   └── local-state
+│   │   │       └── build-history.bin
+│   │   ├── sessions
+│   │   └── thedadfirmbackend002SNAPSHOTplainjar-classes.txt
+│   ├── libs
+│   │   └── thedadfirm-backend-0.0.2-SNAPSHOT-plain.jar
+│   ├── resolvedMainClassName
+│   ├── resources
+│   │   └── main
+│   │       ├── application-dev.yml
+│   │       ├── application-prod.yml
+│   │       ├── application.yml
+│   │       └── questionnaires
+│   │           └── qualification.yml
+│   └── tmp
+│       └── jar
+│           └── MANIFEST.MF
+├── build.gradle
+├── db_data  [error opening dir]
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── Insomnia_The_Dad_Firm.json
+├── Makefile
+├── README.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── kotlin
+    │   │   └── com
+    │   │       └── thedadfirm
+    │   │           └── thedadfirmbackend
+    │   │               ├── Application.kt
+    │   │               ├── config
+    │   │               │   └── ControllerAdvice.kt
+    │   │               ├── controller
+    │   │               │   ├── AuthController.kt
+    │   │               │   ├── QuestionAndAnswerController.kt
+    │   │               │   ├── TableManagementController.kt
+    │   │               │   └── UserController.kt
+    │   │               ├── datastore
+    │   │               │   ├── AccountDatastore.kt
+    │   │               │   ├── AnswerDatastore.kt
+    │   │               │   ├── AuthRepositoryAdapter.kt
+    │   │               │   ├── DangerousRepositoryAdapter.kt
+    │   │               │   ├── entity
+    │   │               │   │   ├── AccountEntity.kt
+    │   │               │   │   ├── AnswerEntity.kt
+    │   │               │   │   ├── SessionEntity.kt
+    │   │               │   │   ├── UserEntity.kt
+    │   │               │   │   └── VerificationTokenEntity.kt
+    │   │               │   ├── jpa
+    │   │               │   │   ├── AccountRepository.kt
+    │   │               │   │   ├── AnswerRepository.kt
+    │   │               │   │   ├── SessionRepository.kt
+    │   │               │   │   ├── UserRepository.kt
+    │   │               │   │   └── VerifyRepository.kt
+    │   │               │   ├── SessionDatastore.kt
+    │   │               │   ├── UserDatastore.kt
+    │   │               │   └── VerifyDatastore.kt
+    │   │               ├── exceptions
+    │   │               │   ├── DataException.kt
+    │   │               │   ├── DeserializationException.kt
+    │   │               │   └── InvalidQuestionException.kt
+    │   │               ├── model
+    │   │               │   ├── Account.kt
+    │   │               │   ├── AnswerAction.kt
+    │   │               │   ├── Answer.kt
+    │   │               │   ├── ErrorResponse.kt
+    │   │               │   ├── Question.kt
+    │   │               │   ├── Questionnaire.kt
+    │   │               │   ├── Session.kt
+    │   │               │   ├── User.kt
+    │   │               │   ├── UserWithSession.kt
+    │   │               │   └── VerificationToken.kt
+    │   │               ├── service
+    │   │               │   ├── AnswerService.kt
+    │   │               │   ├── AuthService.kt
+    │   │               │   ├── QuestionnaireService.kt
+    │   │               │   └── UserService.kt
+    │   │               └── util
+    │   │                   └── NullOrNotBlank.kt
+    │   └── resources
+    │       ├── application-dev.yml
+    │       ├── application-prod.yml
+    │       ├── application.yml
+    │       └── questionnaires
+    │           └── qualification.yml
+    └── test
+        ├── kotlin
+        │   └── com
+        │       └── thedadfirm
+        │           └── thedadfirmbackend
+        │               ├── ApplicationTests.kt
+        │               ├── controller
+        │               │   ├── AuthControllerTest.kt
+        │               │   ├── QuestionAndAnswerControllerTest.kt
+        │               │   └── UserControllerTest.kt
+        │               └── model
+        │                   ├── QuestionnaireTest.kt
+        │                   └── QuestionTest.kt
+        └── resources
+            ├── application.yml
+            └── questionnaires
+                └── test.yml
